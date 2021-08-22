@@ -441,7 +441,7 @@
     <!-- Contact & Map -->
     <section class="p-5">
       <div class="container">
-        <div class="row g-4">
+        <div class="row justify-content-between align-items-center g-4">
           <div class="col-md">
             <h2 class="text-center mb-4">Contact Info</h2>
             <ul class="list-group list-group-flush lead">
@@ -465,8 +465,9 @@
               </li>
             </ul>
           </div>
-          <div class="col-md">
-            <div id="map"></div>
+          <div class="col-md map-responsibe">
+            <!-- <div id="map"></div> -->
+            <div id="googleMap"></div>
           </div>
         </div>
       </div>
@@ -476,7 +477,7 @@
     <footer class="p-5 bg-dark text-white text-center position-relative">
       <div class="container">
         <p class="lead">Copyright &copy; 2021 Frontend Bootcamp</p>
-        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <a href="#" class="bottom-0 end-0 p-5">
           <i class="bi bi-arrow-up-circle h1"></i>
         </a>
       </div>
@@ -541,7 +542,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <!-- <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <script>
       mapboxgl.accessToken =
         "pk.eyJ1IjoiY3Jvd3JvamFzIiwiYSI6ImNrc20yYWtsejFlcHoyd3BldWI3Mmx3OTAifQ.zeLkWruJzzQ38JIjhMEq4A";
@@ -551,6 +552,21 @@
         center: [-71.060982, 42.35725],
         zoom: 18,
       });
-    </script>
+    </script> -->
+    <script>
+        function myMap() {
+          var mapProp = {
+            center: new google.maps.LatLng(-33.49893125939705, -70.61490567359378),
+            zoom: 18,
+          };
+          var map = new google.maps.Map(
+            document.getElementById("googleMap"),
+            mapProp
+          );
+        }
+      </script>
+  
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBncdzWeXVvBPRAMrmmJfCRTQAAtrTIFA0&callback=myMap"></script>
+    </body>
   </body>
 </html>
